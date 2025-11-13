@@ -1,0 +1,152 @@
+/* ============================================
+   GLOBAL BACKGROUND
+   ============================================ */
+
+body {
+  background: url('/images/blender_3dsph_d9.6_chk_1069.png')
+              no-repeat center center fixed;
+  background-size: cover;
+  color: #f2f2f2;
+  font-size: 20px;
+  min-height: 100vh;
+}
+
+html {
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+/* ============================================
+   TEXT COLORS
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+}
+
+a {
+  color: #ffd65a !important;
+}
+a:hover {
+  color: #ffae00 !important;
+}
+
+
+/* ============================================
+   GLASS OVERLAY FOR PAGE CONTENT
+   Applies to: About, Research, CV, posts, etc.
+   ============================================ */
+
+.page,
+.wrapper,
+.page__content,
+.archive,
+.page__hero {
+  background: rgba(0, 0, 0, 0.45);    /* transparent layer */
+  backdrop-filter: blur(10px);        /* GLASS EFFECT */
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 16px;
+  min-height: 50vh;
+  height: auto !important;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+/* Ensures child content doesn’t remove the blur */
+.page__content > * {
+  background: transparent !important;
+}
+
+
+/* ============================================
+   SIDEBAR GLASS PANEL
+   ============================================ */
+
+.sidebar,
+.sidebar__inner,
+.author__content {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  max-height: 100vh;
+  overflow-y: auto !important;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+
+/* ============================================
+   DECORATIVE EXTRAS
+   ============================================ */
+
+img {
+  border-radius: 8px;
+}
+
+hr {
+  border-color: #888;
+  opacity: 0.6;
+}
+/* ============================================
+   FORCE NAVBAR TEXT COLORS — CORRECTED SELECTORS
+   ============================================ */
+
+/* DARK THEME: navbar text should be WHITE */
+:root[data-theme="dark"] #site-nav a,
+:root[data-theme="dark"] #site-nav .masthead__menu-item a,
+:root[data-theme="dark"] #site-nav .navicon,
+:root[data-theme="dark"] #site-nav i {
+  color: #ffffff !important;
+}
+
+/* LIGHT THEME: navbar text should be DARK */
+:root[data-theme="light"] #site-nav a,
+:root[data-theme="light"] #site-nav .masthead__menu-item a,
+:root[data-theme="light"] #site-nav .navicon,
+:root[data-theme="light"] #site-nav i {
+  color: #222222 !important;
+}
+
+
+/* ============================================
+   PAGE CONTENT LINKS (yellow only in content)
+   ============================================ */
+
+.page__content a,
+.page a,
+.archive a {
+  color: #ffd65a !important;
+}
+
+.page__content a:hover,
+.page a:hover,
+.archive a:hover {
+  color: #ffae00 !important;
+}
+
+/* Do NOT color the navbar or sidebar links yellow */
+#site-nav a,
+.sidebar a {
+  color: inherit !important;
+}
+
+/* ==============================================
+   FORCE DARK THEME — disable light mode entirely
+   ============================================== */
+
+:root {
+  color-scheme: dark !important;
+}
+
+:root[data-theme="light"] {
+  color-scheme: dark !important;
+  background: transparent !important;
+  filter: none !important;
+}
+
+/* Remove theme toggle button */
+#theme-toggle {
+  display: none !important;
+}
+
