@@ -167,3 +167,14 @@ hr {
   padding: 1rem;
 }
 
+/* Always force dark theme styling */
+:root[data-theme="light"] {
+  background: transparent !important;
+  color: #f2f2f2 !important;
+}
+
+/* Fix navbar in case theme switches before JS override */
+:root[data-theme="light"] #site-nav a,
+:root[data-theme="light"] #site-nav i {
+  color: #f2f2f2 !important;
+}
