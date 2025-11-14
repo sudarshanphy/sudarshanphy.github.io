@@ -39,6 +39,7 @@ a:hover {
   color: #f2f2f2 !important;
 }
 
+/* hide the theme toggle button */
 #theme-toggle {
   display: none !important;
 }
@@ -115,7 +116,8 @@ a:hover {
 
 
 /* ============================================================
-   SIDEBAR — GLASS + HIDE SCROLLBAR
+   SIDEBAR — GLASS, NO HORIZONTAL SCROLLBAR
+   (scrolls with the page like the default theme)
 =============================================================== */
 
 .sidebar,
@@ -127,19 +129,17 @@ a:hover {
   padding: 1rem !important;
   border-radius: 12px !important;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
-  max-height: 100vh;
-  overflow-y: auto !important;
 
-  /* hide scrollbar */
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
+  /* allow the main page scroll to control vertical movement */
+  max-height: none !important;
+  overflow-y: visible !important;
+
+  /* IMPORTANT: hide any horizontal scrollbar that was showing up */
+  overflow-x: hidden !important;
 }
 
-.sidebar::-webkit-scrollbar,
-.sidebar__inner::-webkit-scrollbar,
-.author__content::-webkit-scrollbar {
-  display: none !important;
-}
+/* do NOT hide scrollbars globally anymore — that was confusing things */
+/* we leave them visible where needed so the browser handles scroll normally */
 
 
 /* ============================================================
@@ -233,11 +233,13 @@ a:hover {
 /* ============================================================
    REMOVE SITEMAP LINK IN FOOTER
 =============================================================== */
+
 .page__footer a[href$="/sitemap/"],
 .page__footer a[href$="sitemap"],
 .page__footer a[href$="sitemap.xml"] {
   display: none !important;
 }
+
 
 /* ============================================================
    UNIFY PAGE TITLES: SIZE + SPACING (FOR ALL LAYOUTS)
@@ -271,8 +273,44 @@ h1.archive__title {
   border-radius: 12px;
 }
 
-/* Extra safety: remove extra margin in archive pages */
-.archive {
-  margin-top: 0 !important;
+
+/* ============================================================
+   ADJUST SIDEBAR VERTICAL OFFSET (manual tuning)
+   ============================================================ */
+
+/* Move sidebar down so it's not hidden under the header */
+.sidebar {
+  margin-top: 2.5rem !important;   /* increase this if still too high */
+}
+
+/* Inner sidebar box also slightly lower (optional) */
+.sidebar__inner {
+  margin-top: 0.5rem !important;   /* tweak as needed */
+}
+
+/*
+  NOTES:
+  - Increase .sidebar margin-top to move it DOWN.
+  - Typical good values: 2rem → 3rem → 4rem.
+  - This does NOT make sidebar sticky or fixed.
+  - It just lowers it so it doesn't get hidden under the header.
+*/
+
+/* Move sidebar slightly to the left */
+.sidebar {
+  transform: translateX(-20px);   /* adjust the number as needed */
+}
+/* ============================================
+   Increase Sidebar Width (safe, non-disruptive)
+============================================ */
+
+
+.sidebar {
+  width: 220px !important;    /* ← change this number until you are happy */
+}
+
+.sidebar__inner,
+.author__content {
+  width: 100% !important;     /* ensures internal elements expand */
 }
 
