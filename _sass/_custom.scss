@@ -314,3 +314,47 @@ h1.archive__title {
   width: 100% !important;     /* ensures internal elements expand */
 }
 
+/* ---------------------------------------------------
+   FIX PROFILE AVATAR HIDING / COLLAPSING ISSUE
+---------------------------------------------------*/
+
+/* Target ONLY the outer avatar wrapper */
+.author__avatar {
+  position: relative !important;
+  z-index: 30 !important;
+  display: block !important;
+}
+
+/* Target ONLY the image INSIDE the avatar wrapper */
+.author__avatar img,
+img.author__avatar {
+  position: relative !important;
+  z-index: 31 !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+/* ============================================================
+   ENLARGE AUTHOR AVATAR (safe, does not break layout)
+=============================================================== */
+
+/* Outer wrapper */
+.author__avatar {
+  width: 170px !important;        /* <-- adjust size */
+  height: auto !important;
+  margin-bottom: 0rem !important;
+}
+
+/* The actual image */
+.author__avatar img,
+img.author__avatar {
+  width: 170px !important;        /* <-- adjust size */
+  height: 170px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
