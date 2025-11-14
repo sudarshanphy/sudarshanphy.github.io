@@ -7,4 +7,4 @@ redirect_from:
   - /resume
 ---
 
-My CV can be downloaded from [here.](/files/AAS_CV_SudarshanNeopane.pdf){:target="_blank"}
+My CV can be downloaded from [here](/files/CV_SudarshanNeopane.pdf){:target="_blank"}.

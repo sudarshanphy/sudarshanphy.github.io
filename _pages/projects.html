@@ -1,0 +1,44 @@
+---
+layout: archive
+title: "Projects"
+permalink: /projects/
+author_profile: true
+---
+
+{% include base_path %}
+<h2>Computational Physics & Numerical Methods Projects</h2>
+
+<p>
+These are projects I have developed outside my main research—ranging from MPI-enabled PDE solvers to visualization tools and experimental numerical methods algorithms.
+Each project links to a dedicated page with details, figures, and example outputs.
+</p>
+
+<hr>
+
+<!-- SORT PROJECTS BY 'order' FIELD -->
+{% assign sorted_projects = site.projects | sort: "order" %}
+
+<div class="project-grid">
+  {% for project in sorted_projects %}
+    <div class="project-card">
+
+      <!-- THUMBNAIL -->
+      {% if project.thumbnail %}
+        <a href="{{ project.url | relative_url }}">
+          <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}" class="project-image">
+        </a>
+      {% endif %}
+
+      <!-- TITLE -->
+      <h3 class="project-title">
+        <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+      </h3>
+
+      <!-- DESCRIPTION -->
+      {% if project.description %}
+        <p class="project-description">{{ project.description }}</p>
+      {% endif %}
+
+    </div>
+  {% endfor %}
+</div>
