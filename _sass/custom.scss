@@ -1,13 +1,12 @@
-/* ============================================
-   GLOBAL BACKGROUND
-   ============================================ */
+/* ============================================================
+   GLOBAL BACKGROUND + DEFAULT TEXT
+=============================================================== */
 
 body {
-  background: url('/images/blender_3dsph_d9.6_chk_1069.png')
-              no-repeat center center fixed;
+  background: url('/images/blender_3dsph_d9.6_chk_1069.png') no-repeat center center fixed;
   background-size: cover;
-  color: #f2f2f2;
   font-size: 20px;
+  color: #f2f2f2;
   min-height: 100vh;
 }
 
@@ -15,10 +14,6 @@ html {
   min-height: 100%;
   overflow-y: auto;
 }
-
-/* ============================================
-   TEXT COLORS
-   ============================================ */
 
 h1, h2, h3, h4, h5, h6 {
   color: #ffffff !important;
@@ -32,200 +27,125 @@ a:hover {
 }
 
 
-/* ============================================
-   GLASS OVERLAY FOR PAGE CONTENT
-   Applies to: About, Research, CV, posts, etc.
-   ============================================ */
+/* ============================================================
+   HARD FORCE DARK THEME (disables light mode fully)
+=============================================================== */
 
-.page,
-.wrapper,
-.page__content,
-.archive{
-  background: rgba(0, 0, 0, 0.45);    /* transparent layer */
-  backdrop-filter: blur(10px);        /* GLASS EFFECT */
-  -webkit-backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 16px;
-  min-height: 50vh;
-  height: auto !important;
-  box-shadow: 0 0 30px rgba(0,0,0,0.3);
-}
-
-/* Ensures child content doesn’t remove the blur */
-.page__content > * {
-  background: transparent !important;
-}
-
-
-/* ============================================
-   SIDEBAR GLASS PANEL
-   ============================================ */
-
-.sidebar,
-.sidebar__inner,
-.author__content {
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  max-height: 100vh;
-  overflow-y: auto !important;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
-}
-
-
-/* ============================================
-   DECORATIVE EXTRAS
-   ============================================ */
-
-img {
-  border-radius: 8px;
-}
-
-hr {
-  border-color: #888;
-  opacity: 0.6;
-}
-
-/* ============================================
-   FORCE NAVBAR TEXT COLORS — CORRECTED SELECTORS
-   ============================================ */
-
-/* DARK THEME: navbar text should be WHITE */
-:root[data-theme="dark"] #site-nav a,
-:root[data-theme="dark"] #site-nav .masthead__menu-item a,
-:root[data-theme="dark"] #site-nav .navicon,
-:root[data-theme="dark"] #site-nav i {
-  color: #ffffff !important;
-}
-
-/* LIGHT THEME: navbar text should be DARK */
-:root[data-theme="light"] #site-nav a,
-:root[data-theme="light"] #site-nav .masthead__menu-item a,
-:root[data-theme="light"] #site-nav .navicon,
-:root[data-theme="light"] #site-nav i {
-  color: #222222 !important;
-}
-
-
-/* ============================================
-   PAGE CONTENT LINKS (yellow only in content)
-   ============================================ */
-
-.page__content a,
-.page a,
-.archive a {
-  color: #ffd65a !important;
-}
-
-.page__content a:hover,
-.page a:hover,
-.archive a:hover {
-  color: #ffae00 !important;
-}
-
-/* Do NOT color the navbar or sidebar links yellow */
-#site-nav a,
-.sidebar a {
-  color: inherit !important;
-}
-
-/* ==============================================
-   FORCE DARK THEME — disable light mode entirely
-   ============================================== */
-
-:root {
-  color-scheme: dark !important;
-}
-
-:root[data-theme="light"] {
+:root,
+:root[data-theme="light"],
+:root[data-theme="dark"] {
   color-scheme: dark !important;
   background: transparent !important;
-  filter: none !important;
+  color: #f2f2f2 !important;
 }
 
-/* Remove theme toggle button */
 #theme-toggle {
   display: none !important;
 }
 
-/* Stop the sidebar from stretching the full height */
-.sidebar,
-.sidebar__inner,
-.author__content {
-  min-height: auto !important;
-  height: auto !important;
-}
 
-/* Lighter glass background ONLY for sidebar content */
-.sidebar__inner {
-  background: rgba(0, 0, 0, 0.25) !important;  /* adjust opacity */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 12px;
-  padding: 1rem;
-}
+/* ============================================================
+   HEADER & FOOTER — GLASS OVERLAY
+=============================================================== */
 
-/* Always force dark theme styling */
-:root[data-theme="light"] {
-  background: transparent !important;
-  color: #f2f2f2 !important;
-}
-
-/* Fix navbar in case theme switches before JS override */
-:root[data-theme="light"] #site-nav a,
-:root[data-theme="light"] #site-nav i {
-  color: #f2f2f2 !important;
-}
-
-
-/* ============================================
-   HEADER & FOOTER BACKGROUND OVERLAY
-   (minimal addition as requested)
-   ============================================ */
-
-/* Header bar over background image */
 .masthead {
-  background: rgba(0, 0, 0, 0.7) !important;       /* dark semi-transparent */
+  background: rgba(0, 0, 0, 0.75) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  padding: 1rem 0 !important;
+  margin-bottom: 1rem !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
 }
 
-/* Make sure header text is readable on dark bg */
 .masthead a,
 .masthead i {
   color: #f2f2f2 !important;
 }
 
-/* Footer bar over background image */
 .page__footer {
-  background: rgba(0, 0, 0, 0.7) !important;       /* dark semi-transparent */
+  background: rgba(0, 0, 0, 0.75) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #f2f2f2 !important;
+  padding: 1.5rem;
 }
 
-/* Footer inner content */
-.page__footer footer {
-  background: transparent !important;
-  color: #f2f2f2 !important;
-}
-
-/* Footer links readable too */
 .page__footer a {
   color: #ffd65a !important;
 }
-
 .page__footer a:hover {
   color: #ffae00 !important;
 }
 
+
 /* ============================================================
-   PROJECTS PAGE — clean 3-column floating card layout
+   TWO-LAYER GLASS EFFECT FOR PAGE CONTENT 
+   Layer 1 = lighter (outer wrap)
+   Layer 2 = darker (actual content)
 =============================================================== */
 
-/* Responsive 3-column grid */
+/* OUTER GLASS LAYER (under header, around content) */
+.page__inner-wrap {
+  background: rgba(0,0,0,0.30) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 1.5rem !important;
+  border-radius: 16px;
+  margin-top: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* INNER GLASS CONTENT BOX */
+.page__content,
+.archive {
+  background: rgba(0,0,0,0.55) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem !important;
+  border-radius: 16px !important;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+
+.page,
+.wrapper {
+  background: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/* ============================================================
+   SIDEBAR — GLASS + HIDE SCROLLBAR
+=============================================================== */
+
+.sidebar,
+.sidebar__inner,
+.author__content {
+  background: rgba(0, 0, 0, 0.55) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 1rem !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  max-height: 100vh;
+  overflow-y: auto !important;
+
+  /* hide scrollbar */
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.sidebar::-webkit-scrollbar,
+.sidebar__inner::-webkit-scrollbar,
+.author__content::-webkit-scrollbar {
+  display: none !important;
+}
+
+
+/* ============================================================
+   PROJECTS PAGE — 3-COLUMN RESPONSIVE GRID
+=============================================================== */
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -233,27 +153,23 @@ hr {
   margin-top: 2rem;
 }
 
-/* Each project card */
 .project-card {
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0,0,0,0.55);
   border-radius: 14px;
   padding: 1.3rem;
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.35);
-  transition: 0.25s ease;
   backdrop-filter: blur(8px);
+  transition: 0.25s ease;
+  box-shadow: 0 0 18px rgba(0,0,0,0.35);
 }
 
-/* Hover effect */
 .project-card:hover {
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0,0,0,0.75);
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.45);
 }
 
-/* Thumbnail images in each card */
 .project-image {
   width: 100%;
-  max-width: 100%;
   height: 170px;
   object-fit: cover;
   border-radius: 10px;
@@ -261,170 +177,102 @@ hr {
   box-shadow: 0 0 12px rgba(0,0,0,0.4);
 }
 
-/* Title */
 .project-title a {
   color: #ffffff !important;
   font-size: 1.3rem;
   font-weight: 600;
-  text-decoration: none;
 }
-
 .project-title a:hover {
   color: #ffd65a !important;
 }
 
-/* Description */
 .project-description {
   color: #dcdcdc;
-  margin-top: 0.6rem;
-  font-size: 1rem;
-  line-height: 1.45;
 }
+
 
 /* ============================================================
-   REMOVE SCROLL BAR FROM SIDEBAR (but keep scrolling)
-=============================================================== */
-
-.sidebar,
-.sidebar__inner,
-.author__content {
-  scrollbar-width: none !important;        /* Firefox */
-  -ms-overflow-style: none !important;      /* IE / Edge */
-}
-
-.sidebar::-webkit-scrollbar,
-.sidebar__inner::-webkit-scrollbar,
-.author__content::-webkit-scrollbar {
-  display: none !important;                 /* Chrome/Safari */
-}
-
-/* ============================================================
-   SHARE BUTTONS — make background opaque for visibility
+   SHARE BUTTONS — MORE OPAQUE
 =============================================================== */
 
 .page__share .btn {
-  background: rgba(0, 0, 0, 0.75) !important;
+  background: rgba(0,0,0,0.75) !important;
   border: 1px solid rgba(255,255,255,0.15);
   color: #ffffff !important;
   backdrop-filter: blur(4px);
 }
-
 .page__share .btn:hover {
-  background: rgba(0, 0, 0, 0.92) !important;
-  border-color: rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.9) !important;
 }
-
-/* Icons inside share buttons */
 .page__share i {
   color: #ffd65a !important;
 }
 
+
 /* ============================================================
-   NEXT / PREVIOUS POST NAVIGATION
+   PAGINATION / NEXT / PREVIOUS
 =============================================================== */
 
 .pagination,
 .pagination a,
 .page__meta,
 .page__content .pagination {
-  background: rgba(0, 0, 0, 0.70) !important;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: #ffffff !important;
+  background: rgba(0,0,0,0.70) !important;
   border-radius: 10px;
-  padding: 0.7rem 1.2rem;
+  padding: 0.7rem 1.2rem !important;
+  color: #ffffff !important;
   border: 1px solid rgba(255,255,255,0.15);
 }
 
 .pagination a:hover {
-  background: rgba(0, 0, 0, 0.90) !important;
+  background: rgba(0,0,0,0.90) !important;
   color: #ffd65a !important;
 }
 
+
 /* ============================================================
-   FIX EMPTY BLACK BAR ON ABOUT PAGE (empty .page__hero)
+   REMOVE SITEMAP LINK IN FOOTER
 =============================================================== */
-
-.page__hero {
-  background: none !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  min-height: 0 !important;
-}
-
-/* When .page__hero has actual content (like hero images), restore normal look */
-.page__hero.has-image {
-  background: rgba(0,0,0,0.45) !important;
-  padding: 2rem !important;
-  border-radius: 16px;
-  min-height: auto !important;
-}
-
-/* ============================================================
-   FIX: Remove black bar caused by empty page header/wrapper
-=============================================================== */
-
-/* Remove glass background from empty header blocks */
-.page__header {
-  background: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-/* Remove background from the outer wrapper */
-.page {
-  background: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-
-/* Keep glass on REAL content only */
-.page__content {
-  background: rgba(0,0,0,0.45) !important;
-  padding: 2rem !important;
-  border-radius: 16px !important;
-}
-
-/* ============================================================
-   REMOVE ALL EMPTY WRAPPER BACKGROUNDS (Guaranteed fix)
-=============================================================== */
-
-/* Removes backgrounds from all MM wrapper blocks */
-.page__inner-wrap,
-.page__hero,
-.page__header,
-.page__meta,
-.page__lead,
-.page__title,
-.wrapper {
-  background: none !important;
-  box-shadow: none !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  border: none !important;
-}
-
-/* The ONLY element allowed to have glass background */
-.page__content {
-  background: rgba(0,0,0,0.45) !important;
-  border-radius: 16px !important;
-  padding: 2rem !important;
-  box-shadow: 0 0 30px rgba(0,0,0,0.3) !important;
-}
-
-/* ============================================================
-   HIDE SITEMAP LINK IN FOOTER ONLY
-   ============================================================ */
-
-/* Common cases: /sitemap/, /sitemap, /sitemap.xml */
 .page__footer a[href$="/sitemap/"],
-.page__footer a[href$="sitemap/"],
 .page__footer a[href$="sitemap"],
 .page__footer a[href$="sitemap.xml"] {
   display: none !important;
+}
+
+/* ============================================================
+   UNIFY PAGE TITLES: SIZE + SPACING (FOR ALL LAYOUTS)
+=============================================================== */
+
+.page__title,
+.archive__title,
+.page-title,
+h1.page__title,
+h1.archive__title {
+  font-size: 2.2rem !important;     /* uniform size */
+  font-weight: 700 !important;
+  margin-top: 0 !important;         /* remove weird gaps */
+  margin-bottom: 1.2rem !important; /* consistent spacing */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1.3 !important;
+  color: #ffffff !important;
+}
+
+/* Ensure no layout adds its own padding */
+.page__header,
+.archive__header,
+.page__hero,
+.page-header {
+  margin-bottom: 1.2rem !important;
+  padding: 0 !important;
+  background: rgba(0,0,0,0.35) !important;     /* top-layer glass */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 12px;
+}
+
+/* Extra safety: remove extra margin in archive pages */
+.archive {
+  margin-top: 0 !important;
 }
 
