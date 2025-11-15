@@ -17,9 +17,11 @@ This project implements a 2D wave equation solver using the second-order accurat
 
 The PDE that is beign solved is:
 
-$$ u_{tt}(x,y,t) = c^{2}\left(u_{xx}(x,y,t) + u_{yy}(x,y,t)\right) + S(x,y,t) $$
+$$ 
+u_{tt}(x,y,t) = c^{2}\left(u_{xx}(x,y,t) + u_{yy}(x,y,t)\right) + S(x,y,t)  
+$$ <br>
 
-where, $$ u(x,y,t)$$ is displacement of the wave and $$S(x,y,t)$$ is a source function, in this case it's approximated as a sinusoidal function of $$ t $$.
+where, $$u(x,y,t)$$ is displacement of the wave and $$S(x,y,t)$$ is a source function, in this case it's approximated as a sinusoidal function of $$t$$.
 
 The discretized equation is:
 
@@ -31,8 +33,9 @@ u^{n+1}_{i,j} =
 + \Delta t^{2} S^{n}_{i,j}
 $$
 
-### Goals
 
+
+### Goals
 - Understand and implement MPI parallelization
 - Understand and impelemnt HDF5 file format for simulation output 
  

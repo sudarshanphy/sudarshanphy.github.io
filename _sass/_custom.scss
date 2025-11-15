@@ -357,4 +357,48 @@ img.author__avatar {
   object-fit: cover !important;
   display: block !important;
 }
+/* ============================================================
+   FIX MATHJAX EQUATION BEHAVIOR
+   - Block math: centered, auto-scale, no scrollbars
+   - Inline math: remain inline, no forced centering
+=============================================================== */
+
+/* GENERAL CONTAINER BEHAVIOR */
+mjx-container {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* ==== BLOCK EQUATIONS (display math) ==== */
+mjx-container[display="block"] {
+  display: block !important;
+  text-align: center !important;
+  margin: 1rem auto !important;
+  padding: 0.4rem 0 !important;
+}
+
+/* Resize block equations (auto scale to fit box) */
+mjx-container[display="block"] mjx-math {
+  font-size: 0.95em !important;       /* tweak for desired sizing */
+  white-space: normal !important;
+}
+
+mjx-container[display="block"] svg {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* ==== INLINE EQUATIONS ==== */
+mjx-container:not([display="block"]) {
+  display: inline !important;         /* keep inline */
+  text-align: left !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Keep inline math small and avoid resizing badly */
+mjx-container:not([display="block"]) mjx-math {
+  font-size: 1em !important;
+  white-space: normal !important;
+}
 
