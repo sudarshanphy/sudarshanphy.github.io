@@ -5,6 +5,7 @@ thumbnail: /images/themes/homepage-light.png
 layout: single
 author_profile: true
 order: 2
+published: false
 ---
 
 <img src="/images/themes/homepage-light.png" class="project-thumb">
