@@ -13,7 +13,7 @@ order: 1
 
 ### Overview
 
-This project initially started as a final project to build intuition for compressible hydrodynamics and the numerical algorithms behind finite volume methods. As I got more interested in magnetohydrodynamics, I extended the solver from ideal HD (Euler) to ideal MHD by adding magnetic field evolution and the associated Lorentz force terms. To control numerical divergence errors and enforce the solenoidal constraint $$\nabla\cdot\mathbf{B}=0$$, I implemented the Generalized Lagrange Multiplier (GLM) divergence cleaning approach. The entire codebase is written in `Fortran` and is available [here](https://github.com/sudarshanphy/2DHydro).
+This project initially started as a fun project to build intuition for compressible hydrodynamics and the numerical algorithms behind finite volume methods. As I got more interested in magnetohydrodynamics, I extended the solver from ideal HD (Euler) to ideal MHD by adding magnetic field evolution and the associated Lorentz force terms. To control numerical divergence errors and enforce the solenoidal constraint $$\nabla\cdot\mathbf{B}=0$$, I implemented the Generalized Lagrange Multiplier (GLM) divergence cleaning approach. The entire codebase is written in `Fortran` and is available [here](https://github.com/sudarshanphy/2DHydro).
 
 The code uses MPI for domain decomposition in X and Y directions. Each sub-domain is offloaded to a single MPI core. To futher increase the speed of computation, the computation kernels are offloaded to GPUs using OpenMP offloading. This makes the code GPU architecture independent and provides a speed-up of **10X**. 
 
