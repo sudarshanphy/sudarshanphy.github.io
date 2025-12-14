@@ -1,15 +1,15 @@
 ---
 title: "2D Wave equation solver with MPI and HDF5"
 description: "A parallelized finite-difference solver for the 2D wave equation equation using MPI domain decomposition and HDF5 for output."
-thumbnail: /project_files/plot_wave_2d_0199.png
+thumbnail: /project_files/mpi_wave/plot_wave_2d_0199.png
 layout: single
 author_profile: true
 order: 1
 ---
 
-<img src="/project_files/plot_wave_2d_0000.png" alt="drawing" width="295">
-<img src="/project_files/plot_wave_2d_0099.png" class="project-thumb" alt="drawing" width="295">
-<img src="/project_files/plot_wave_2d_0199.png" class="project-thumb" alt="drawing" width="295">
+<img src="/project_files/mpi_wave/plot_wave_2d_0000.png" alt="drawing" width="295">
+<img src="/project_files/mpi_wave/plot_wave_2d_0099.png" class="project-thumb" alt="drawing" width="295">
+<img src="/project_files/mpi_wave/plot_wave_2d_0199.png" class="project-thumb" alt="drawing" width="295">
 
 ### Overview
 
@@ -49,7 +49,7 @@ The simulation is setup with reflecting boundary conditions in all the spatial d
 
 <div align="center">
 <video width="50%" controls>
-  <source src="/project_files/wave_2d_soln.mp4" type="video/mp4">
+  <source src="/project_files/mpi_wave/wave_2d_soln.mp4" type="video/mp4">
 </video>
 </div>
 
